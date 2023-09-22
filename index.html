@@ -4,7 +4,7 @@
 
 <head>
     <title>
-        Colby's Site
+        Cat Site
     </title>
     <link rel="icon" type="icon" href="Media/favicon1.ico">
     <link rel="stylesheet" href="Styles.css">
@@ -15,15 +15,37 @@
 </head>
 
 <body>
-    <div id="top">
+    <script>
+        function openFullscreen(ItemSelf) {
 
-    </div>
-    <div class="topnavheader">
+            var elem = document.documentElement;
+            if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            } else {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            }
+        }
+    </script>
+    <div id="top" class="topnavheader">
         <div class="topnavheadertext" style="margin: 0%;">
-            <a href="#Top">Colby's Site</a>
+            <a href="./">Cat Site</a>
         </div>
         <div class="topnavheaderimg" style="margin: 0%;">
-            <img width="auto" height="30px" class="RightAlign" src="Media/favicon1.ico" alt="<|>">
+            <a href="https://lynxmountain.github.io/Home/">
+                <img width="auto" height="30px" class="RightAlign" src="Media/favicon1.ico" alt="<|>">
+            </a>
         </div>
     </div>
     <div class="topnav">
@@ -40,26 +62,26 @@
             -- Cat Image 1 --
         </p>
         <br>
-        <img title="Cat Image 1" id="Cat1" style="width: 75%; height: auto;" src="Media/Cat1.jpg" alt="Cat Image 1">
+        <img title="Cat Image 1" id="Cat1" style="width: 75%; height: auto;" src="Media/Cat1.jpg" alt="Cat Image 1" onclick="openFullscreen(this)">
         <br>
         <p class="TextThree">
             -- Cat Image 2 --
         </p>
         <br>
-        <img title="Cat Image 2" id="Cat2" width="90%" height="auto" src="Media/Cat4.jpg" alt="Cat Image 2">
+        <img title="Cat Image 2" id="Cat2" width="90%" height="auto" src="Media/Cat4.jpg" alt="Cat Image 2" onclick="openFullscreen(this)">
         <br>
         <p class="TextFour">
             -- Cat Image 3 --
         </p>
         <br>
-        <img title="Cat Image 3" id="Cat3" width="60%" height="auto" src="Media/Cat3.gif" alt="Cat Image 3">
+        <img title="Cat Image 3" id="Cat3" width="60%" height="auto" src="Media/Cat3.gif" alt="Cat Image 3" onclick="openFullscreen(this)">
     </div>
     <div class="ScrollButton">
         <a href="#top">
-            <img class="ScrollButtonImage" src="Media/favicon3.ico" alt="TOP" onclick="window.location.href='#top'"/>
+            <img class="ScrollButtonImage" src="Media/favicon3.ico" alt="TOP" onclick="window.location.href='#top'" />
         </a>
     </div>
-    <div title="Top" class="topnavfooter">
+    <div id="bottom" title="Top" class="topnavfooter">
         <a href="./AboutMe">About Me</a>
     </div>
 </body>
