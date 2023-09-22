@@ -16,7 +16,7 @@
 
 <body>
     <script>
-        function openFullscreen(ItemSelf) {
+        function ToggleFullscreen() {
 
             var elem = document.documentElement;
             if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
@@ -35,6 +35,68 @@
                 } else if (elem.msRequestFullscreen) { /* IE11 */
                     elem.msRequestFullscreen();
                 }
+            }
+        }
+        function CloseFullscreen() {
+            var elem = document.documentElement;
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+        function OpenFullscreen() {
+            var elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+        function ShowImage1() {
+            //OpenFullscreen();
+            var elem = document.getElementsByClassName("Preview1");
+            if (elem.length > 0) {
+                elem[0].className = "ImagePreviews PreviewActive Preview1"
+            }
+        }
+        function ShowImage2() {
+            //OpenFullscreen();
+            var elem = document.getElementsByClassName("Preview2");
+            if (elem.length > 0) {
+                elem[0].className = "ImagePreviews PreviewActive Preview2"
+            }
+        }
+        function ShowImage3() {
+            //OpenFullscreen();
+            var elem = document.getElementsByClassName("Preview3");
+            if (elem.length > 0) {
+                elem[0].className = "ImagePreviews PreviewActive Preview3"
+            }
+        }
+        function HideImage1() {
+           //CloseFullscreen();
+            var elem = document.getElementsByClassName("Preview1");
+            if (elem.length > 0) {
+                elem[0].className = "ImagePreviews PreviewInactive Preview1"
+            }
+        }
+        function HideImage2() {
+            //CloseFullscreen();
+            var elem = document.getElementsByClassName("Preview2");
+            if (elem.length > 0) {
+                elem[0].className = "ImagePreviews PreviewInactive Preview2"
+            }
+        }
+        function HideImage3() {
+            //CloseFullscreen();
+            var elem = document.getElementsByClassName("Preview3");
+            if (elem.length > 0) {
+                elem[0].className = "ImagePreviews PreviewInactive Preview3"
             }
         }
     </script>
@@ -62,19 +124,22 @@
             -- Cat Image 1 --
         </p>
         <br>
-        <img title="Cat Image 1" id="Cat1" style="width: 75%; height: auto;" src="Media/Cat1.jpg" alt="Cat Image 1" onclick="openFullscreen(this)">
+        <img title="Cat Image 1" id="Cat1" style="width: 75%; height: auto;" src="Media/Cat1.jpg" alt="Cat Image 1"
+            onclick="ShowImage1()">
         <br>
         <p class="TextThree">
             -- Cat Image 2 --
         </p>
         <br>
-        <img title="Cat Image 2" id="Cat2" width="90%" height="auto" src="Media/Cat4.jpg" alt="Cat Image 2" onclick="openFullscreen(this)">
+        <img title="Cat Image 2" id="Cat2" width="90%" height="auto" src="Media/Cat4.jpg" alt="Cat Image 2"
+            onclick="ShowImage2()">
         <br>
         <p class="TextFour">
             -- Cat Image 3 --
         </p>
         <br>
-        <img title="Cat Image 3" id="Cat3" width="60%" height="auto" src="Media/Cat3.gif" alt="Cat Image 3" onclick="openFullscreen(this)">
+        <img title="Cat Image 3" id="Cat3" width="60%" height="auto" src="Media/Cat3.gif" alt="Cat Image 3"
+            onclick="ShowImage3()">
     </div>
     <div class="ScrollButton">
         <a href="#top">
@@ -83,6 +148,18 @@
     </div>
     <div id="bottom" title="Top" class="topnavfooter">
         <a href="./AboutMe">About Me</a>
+    </div>
+    <div class="ImagePreviews PreviewInactive Preview1" onclick="HideImage1()">
+        <img style="z-index: 10000;" title="Cat Image 1" id="Cat1" style="width: 75%; height: auto;"
+            src="Media/Cat1.jpg" alt="Cat Image 1" onclick="">
+    </div>
+    <div class="ImagePreviews PreviewInactive Preview2" onclick="HideImage2()">
+        <img style="z-index: 10001;" title="Cat Image 2" id="Cat2" width="90%" height="auto" src="Media/Cat4.jpg"
+            alt="Cat Image 2" onclick="">
+    </div>
+    <div class="ImagePreviews PreviewInactive Preview3" onclick="HideImage3()">
+        <img style="z-index: 10002;" title="Cat Image 3" id="Cat3" width="60%" height="auto" src="Media/Cat3.gif"
+            alt="Cat Image 3" onclick="">
     </div>
 </body>
 

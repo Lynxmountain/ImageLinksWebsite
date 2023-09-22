@@ -141,3 +141,29 @@ body {
     margin-left: 10px;
     color: rgb(255, 255, 255);
 }
+.ImagePreviews {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    background-color: rgba(0, 0, 0, .8);
+    overflow: hidden;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.ImagePreviews img {
+    margin: 25px;
+    height: calc(100% - 50px);
+    width: auto;
+}
+.PreviewInactive {
+    visibility: hidden;
+}
+.PreviewActive {
+    visibility: visible;
+}
